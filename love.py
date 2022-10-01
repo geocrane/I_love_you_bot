@@ -15,10 +15,12 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 
 def get_compliments():
-    index = random.randrange(1, 100)
-    compliment_1 = compliments.get(index)
-    index = random.randrange(1, 100)
-    compliment_2 = compliments.get(index)
+    index_1 = random.randrange(1, 99)
+    compliment_1 = compliments.get(index_1)
+    index_2 = random.randrange(1, 100)
+    if index_2 == index_1:
+        index_2 += 1
+    compliment_2 = compliments.get(index_2)
     return (
         f"Сережа просил передать, что ты у него "
         f"{compliment_1} и {compliment_2}"
@@ -55,11 +57,10 @@ def main():
     )
     while True:
         updater.start_polling()
-        # updater.idle()
         bot = Bot(token=TELEGRAM_TOKEN)
         message = get_compliments()
         bot.send_message(TELEGRAM_CHAT_ID, message)
-        time.sleep(600)
+        time.sleep(7200)
 
 
 if __name__ == "__main__":
