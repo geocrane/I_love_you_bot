@@ -17,13 +17,15 @@ MESSAGES = {
     "first": "Сережа просил передать, что ты у него {compliment_1} и {compliment_2}.",
     "second": "Твой муж мне сказал, что он тебя любит, потому что ты {compliment_1} и {compliment_2}.",
     "third": "А тебе кто-нибудь говорил, что ты {compliment_1} и {compliment_2}?",
-    "forth": "Исключительно от себя скажу, что ты {compliment_1} и {compliment_2}, рад быть твоим ботом.",
+    "forth": "Исключительно от себя скажу, что ты {compliment_1} и {compliment_2}.",
     "fifth": "По секрету, любой мужчина должен видеть, какая ты {compliment_1} и {compliment_2}",
+    "six": "Разве есть еще женщина более {compliment_1} и {compliment_2}, чем ты?",
+    "seven": "Такая {compliment_1} и {compliment_2} девочка как ты - мечта любого мужчины! "
 }
 
 
 def get_compliments():
-    list_index = ["first", "second", "third", "forth", "fifth"]
+    list_index = ["first", "second", "third", "forth", "fifth", "six", "seven"]
     index_0 = random.randrange(0, (len(list_index)-1))
     message = MESSAGES.get(list_index[index_0])
     index_1 = random.randrange(1, (len(compliments) - 1))
