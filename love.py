@@ -21,12 +21,11 @@ MESSAGES = {
     "fifth": "Любой мужчина должен видеть, какая ты {compliment_1} и {compliment_2}",
 }
 
-list_index = ["first", "second", "third", "forth", "fifth"]
-index_0 = random.randrange(0, (len(list_index)-1))
-message = MESSAGES.get(list_index[index_0])
-
 
 def get_compliments():
+    list_index = ["first", "second", "third", "forth", "fifth"]
+    index_0 = random.randrange(0, (len(list_index)-1))
+    message = MESSAGES.get(list_index[index_0])
     index_1 = random.randrange(1, (len(compliments) - 1))
     compliment_1 = compliments.get(index_1)
     index_2 = random.randrange(1, len(compliments))
