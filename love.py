@@ -20,7 +20,7 @@ MESSAGES = {
     "forth": "Исключительно от себя скажу, что ты {compliment_1} и {compliment_2}.",
     "fifth": "По секрету, любой мужчина должен видеть, какая ты {compliment_1} и {compliment_2}",
     "six": "Разве есть еще женщина более {compliment_1} и {compliment_2}, чем ты?",
-    "seven": "Такая {compliment_1} и {compliment_2} девочка как ты - мечта любого мужчины! "
+    "seven": "Сережа счастлив, что у него такая {compliment_1} и {compliment_2} жена."
 }
 
 
