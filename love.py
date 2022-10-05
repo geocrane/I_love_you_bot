@@ -18,7 +18,7 @@ MESSAGES = {
     "second": "Твой муж любит тебя за то, что ты {compliment_1} и {compliment_2}.",
     "third": "А тебе кто-нибудь говорил, что ты {compliment_1} и {compliment_2}?",
     "forth": "Исключительно от себя скажу, что ты {compliment_1} и {compliment_2}.",
-    "fifth": "По секрету, любой мужчина должен видеть, какая ты {compliment_1} и {compliment_2}",
+    "fifth": "По секрету, любой мужчина должен видеть, какая ты {compliment_1} и {compliment_2}.",
     "six": "Твой муж сказал, что во всем мире только ты такая {compliment_1} и {compliment_2}!",
     "seven": "Сережа счастлив, что у него такая {compliment_1} и {compliment_2} жена."
 }
