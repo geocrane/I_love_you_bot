@@ -15,11 +15,11 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 MESSAGES = {
     "first": "Сережа просил передать, что ты у него {compliment_1} и {compliment_2}.",
-    "second": "Твой муж мне сказал, что он тебя любит, потому что ты {compliment_1} и {compliment_2}.",
+    "second": "Твой муж любит тебя за то, что ты {compliment_1} и {compliment_2}.",
     "third": "А тебе кто-нибудь говорил, что ты {compliment_1} и {compliment_2}?",
     "forth": "Исключительно от себя скажу, что ты {compliment_1} и {compliment_2}.",
     "fifth": "По секрету, любой мужчина должен видеть, какая ты {compliment_1} и {compliment_2}",
-    "six": "Разве есть еще женщина более {compliment_1} и {compliment_2}, чем ты?",
+    "six": "Твой муж сказал, что во всем мире только ты такая {compliment_1} и {compliment_2}!",
     "seven": "Сережа счастлив, что у него такая {compliment_1} и {compliment_2} жена."
 }
 
