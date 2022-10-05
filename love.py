@@ -13,18 +13,27 @@ load_dotenv()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
+MESSAGES = dict(
+    first="Сережа просил передать, что ты у него {compliment_1} и {compliment_2}",
+    second="Твой муж мне сказал, что он тебя любит, потому что ты {compliment_1} и {compliment_2}",
+    third="А тебе кто-нибудь говорил, что ты {compliment_1} и {compliment_2}",
+    forth="Исключительно от себя скажу, что ты {compliment_1} и {compliment_2}",
+    fifth="Любой мужчина должен видеть, какая ты {compliment_1} и {compliment_2}",
+)
+
+list_index = ["first", "second", "third", "forth", "fifth"]
+index_dict = random.randrange(0, (len(list_index) - 1))
+message = MESSAGES[list_index[index_dict]]
+
 
 def get_compliments():
-    index_1 = random.randrange(1, 99)
+    index_1 = random.randrange(1, (len(compliments) - 1))
     compliment_1 = compliments.get(index_1)
-    index_2 = random.randrange(1, 100)
+    index_2 = random.randrange(1, len(compliments))
     if index_2 == index_1:
         index_2 += 1
     compliment_2 = compliments.get(index_2)
-    return (
-        f"Сережа просил передать, что ты у него "
-        f"{compliment_1} и {compliment_2}"
-    )
+    return message.format(compliment_1=compliment_1, compliment_2=compliment_2)
 
 
 def new_compliment(update, context):
