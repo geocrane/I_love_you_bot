@@ -20,15 +20,11 @@ def get_endings(compliment, ending):
 
 
 def get_compliments():
-    index_0 = random.randrange(0, (len(MESSAGES) - 1))
-    message = MESSAGES[index_0]
-    index_1 = random.randrange(0, (len(COMPLIMENTS) - 2))
-    compliment_1 = COMPLIMENTS[index_1]
-    index_2 = random.randrange(0, (len(COMPLIMENTS) - 1))
-    if index_2 == index_1:
-        index_2 += 1
-    compliment_2 = COMPLIMENTS[index_2]
-    return message.format(compliment_1=compliment_1, compliment_2=compliment_2)
+    message = random.choise(MESSAGES)
+    compliments = random.sample(COMPLIMENTS, 2)
+    return message.format(
+        compliment_1=compliments[0], compliment_2=compliments[1]
+    )
 
 
 def new_compliment(update, context):
