@@ -1,4 +1,3 @@
-import logging
 import os
 import random
 import time
@@ -7,8 +6,8 @@ from dotenv import load_dotenv
 from telegram import Bot, ReplyKeyboardMarkup
 from telegram.ext import CommandHandler, Updater
 
-from messages import MESSAGES
 from compliments import COMPLIMENTS
+from messages import MESSAGES
 
 load_dotenv()
 
@@ -21,9 +20,8 @@ def get_endings(compliment, ending):
 
 
 def get_compliments():
-    list_index = ["first", "second", "third", "forth", "fifth", "six", "seven"]
-    index_0 = random.randrange(0, (len(list_index) - 1))
-    message = MESSAGES.get(list_index[index_0])
+    index_0 = random.randrange(0, (len(MESSAGES) - 1))
+    message = MESSAGES[index_0]
     index_1 = random.randrange(0, (len(COMPLIMENTS) - 2))
     compliment_1 = COMPLIMENTS[index_1]
     index_2 = random.randrange(0, (len(COMPLIMENTS) - 1))
@@ -70,13 +68,5 @@ def main():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(
-        level=logging.INFO,
-        format=(
-            "[%(asctime)s][%(levelname)s][str: %(lineno)d]"
-            "[func: %(funcName)s] > %(message)s"
-        ),
-        datefmt="%Y-%m-%d %H:%M:%S",
-    )
 
     main()
