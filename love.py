@@ -20,11 +20,24 @@ def get_endings(compliment, ending):
 
 
 def get_compliments():
-    message = random.choice(MESSAGES)
     compliments = random.sample(COMPLIMENTS, 2)
-    return message.format(
-        compliment_1=compliments[0], compliment_2=compliments[1]
-    )
+    message_set = random.choice(MESSAGES)
+    for key in message_set.keys():
+        if key == "oy":
+            if compliments[0][-1] == "ш" or "щ" or "ч":
+                compliment_1 = str(compliments[0] + "ей")
+            compliment_1 = str(compliments[0] + "ой")
+            if compliments[1][-1] == "ш" or "щ" or "ч":
+                compliment_2 = str(compliments[1] + "ей")
+            compliment_2 = str(compliments[1] + "ой")
+        if key == "aya":
+            compliment_1 = str(compliments[0] + "ая")
+            compliment_2 = str(compliments[1] + "ая")
+        if key == "uyu":
+            compliment_1 = str(compliments[0] + "ую")
+            compliment_2 = str(compliments[1] + "ую")
+        message = random.choice((message_set)[key])
+    return message.format(compliment_1=compliment_1, compliment_2=compliment_2)
 
 
 def new_compliment(update, context):
@@ -51,7 +64,7 @@ def wake_up(update, context):
 def main():
     updater = Updater(token=TELEGRAM_TOKEN)
 
-    updater.dispatcher.add_handler(CommandHandler("start", wake_up))
+    # updater.dispatcher.add_handler(CommandHandler("start", wake_up))
     updater.dispatcher.add_handler(
         CommandHandler("compliment", new_compliment)
     )
