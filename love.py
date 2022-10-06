@@ -20,7 +20,7 @@ def get_endings(compliment, ending):
 
 
 def get_compliments():
-    message = random.choise(MESSAGES)
+    message = random.choice(MESSAGES)
     compliments = random.sample(COMPLIMENTS, 2)
     return message.format(
         compliment_1=compliments[0], compliment_2=compliments[1]
